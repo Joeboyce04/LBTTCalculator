@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestLBTTBelowFirstValue(t *testing.T){
+func TestLBTTFirstValue(t *testing.T){
 	HousePrice:= 100000
 
 	got:=calculateLBTT(HousePrice)
@@ -29,7 +29,7 @@ func TestLBTTIsFirstVlue(t *testing.T){
 }
 
 
-func TestLBTTBelowSecondValue(t *testing.T){
+func TestLBTTSecondValue(t *testing.T){
 	HousePrice:= 180000
 
 	got:= calculateLBTT(HousePrice)
@@ -53,6 +53,30 @@ func TestLBTTIsSecondValue(t *testing.T){
 	}
 }
 
+func TestLBTTThirdValue(t *testing.T){
+	HousePrice:=300000
+	got:= calculateLBTT(HousePrice)
+
+	want:=2500
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
+
+func TestLBTTIsThirdValue(t *testing.T){
+	HousePrice:=325000
+	got:= calculateLBTT(HousePrice)
+
+	want:=3750
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
+
+
+
 
 func TestTwoPercentCalculation(t *testing.T){
 	HousePrice:=100
@@ -65,7 +89,21 @@ func TestTwoPercentCalculation(t *testing.T){
 		t.Error("Got",got,"Want",want,)
 	}
 
-} 
+}
+
+func TestFivePercentCalculation(t *testing.T){
+	HousePrice:= 100
+
+	got:= FivePercentCalculation(HousePrice)
+
+	want:=5
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
+
+
 
 func TestHousePriceFunction(t *testing.T){
 	 got := HousePrice()
