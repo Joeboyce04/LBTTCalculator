@@ -1,4 +1,4 @@
-package mymain
+package main
 
 import (
 	"testing"
@@ -34,7 +34,7 @@ func TestLBTTBelowSecondValue(t *testing.T){
 
 	got:= calculateLBTT(HousePrice)
 
-	want:=3600
+	want:=700
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
@@ -46,7 +46,7 @@ func TestLBTTIsSecondValue(t *testing.T){
 
 	got:= calculateLBTT(HousePrice)
 
-	want:=5000
+	want:=2100
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
@@ -55,11 +55,11 @@ func TestLBTTIsSecondValue(t *testing.T){
 
 
 func TestTwoPercentCalculation(t *testing.T){
-	HousePrice:=150000
+	HousePrice:=100
 
 	got:=TwoPercentCalculation(HousePrice)
 
-	want:=3000
+	want:=2
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
@@ -74,9 +74,11 @@ func TestHousePriceFunction(t *testing.T){
 
 	 if got != want {
 		 t.Error("Got", got, "Want", want) 
-		 } 
-		 } 
-		 
+		
+		}
+
+	 } 
+
 
 func TestNegativeHousePrice(t *testing.T){ 
 	 HousePrice := -100000 
@@ -88,4 +90,5 @@ func TestNegativeHousePrice(t *testing.T){
 	 if got != want { 
 		t.Error("Got", got, "Want", want) 
 	}
+
 	 }

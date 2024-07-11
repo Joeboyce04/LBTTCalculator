@@ -1,4 +1,4 @@
-package mymain
+package main
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ func calculateLBTT(HousePrice int) int {
 	case HousePrice <= 145000:
 		return 0
 	case HousePrice <= 250000:
-		return  TwoPercentCalculation(HousePrice)
+		return  TwoPercentCalculation(HousePrice- 145000)
 
 	default:
 		return 0
