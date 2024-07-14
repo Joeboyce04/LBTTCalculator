@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestLBTTFirstValue(t *testing.T){
+func TestLBTTFirstBand(t *testing.T){
 	HousePrice:= 100000
 
 	got:=calculateLBTT(HousePrice)
@@ -16,7 +16,7 @@ func TestLBTTFirstValue(t *testing.T){
 	}
 }
 
-func TestLBTTIsFirstVlue(t *testing.T){
+func TestLBTTIsFirstBand(t *testing.T){
 	HousePrice:=145000
 
 	got:=calculateLBTT(HousePrice)
@@ -29,7 +29,7 @@ func TestLBTTIsFirstVlue(t *testing.T){
 }
 
 
-func TestLBTTSecondValue(t *testing.T){
+func TestLBTTSecondBand(t *testing.T){
 	HousePrice:= 180000
 
 	got:= calculateLBTT(HousePrice)
@@ -41,7 +41,7 @@ func TestLBTTSecondValue(t *testing.T){
 	}
 }
 
-func TestLBTTIsSecondValue(t *testing.T){
+func TestLBTTIsSecondVBand(t *testing.T){
 	HousePrice:= 250000
 
 	got:= calculateLBTT(HousePrice)
@@ -53,29 +53,49 @@ func TestLBTTIsSecondValue(t *testing.T){
 	}
 }
 
-func TestLBTTThirdValue(t *testing.T){
+func TestLBTTThirdBand(t *testing.T){
 	HousePrice:=300000
 	got:= calculateLBTT(HousePrice)
 
-	want:=2500
+	want:= 4600
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
 	}
 }
 
-func TestLBTTIsThirdValue(t *testing.T){
+func TestLBTTIsThirdBand(t *testing.T){
 	HousePrice:=325000
 	got:= calculateLBTT(HousePrice)
 
-	want:=3750
+	want:=5850
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
 	}
 }
 
+func TestLBTTFourthBand(t *testing.T){
+	HousePrice:=600000
+	got:= calculateLBTT(HousePrice)
 
+	want:= 33350
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
+
+func TestLBTTIsFourthBand(t *testing.T){
+	HousePrice:=750000
+	got:= calculateLBTT(HousePrice)
+
+	want:=48350
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
 
 
 func TestTwoPercentCalculation(t *testing.T){
@@ -101,6 +121,21 @@ func TestFivePercentCalculation(t *testing.T){
 	if got!=want{
 		t.Error("Got",got,"Want",want,)
 	}
+
+}
+
+func TestTenPercentCalculation(t *testing.T){
+	HousePrice:= 100
+
+	got:= TenPercentCalculation(HousePrice)
+
+	want:= 10
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+
+	
 }
 
 
@@ -129,4 +164,4 @@ func TestNegativeHousePrice(t *testing.T){
 		t.Error("Got", got, "Want", want) 
 	}
 
-	 }
+ }
