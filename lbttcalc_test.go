@@ -103,11 +103,11 @@ func TestLBTTAtFourthBandLimit(t *testing.T) {
 }
 
 func TestLBTTAboveFourthBand(t *testing.T) {
-	housePrice := 800000
+	housePrice := 900000
 
 	got, _ := calculateLBTT(housePrice)
 
-	want := 54350
+	want := 66350
 
 	if got != want {
 		t.Error("Got", got, "Want", want)
@@ -158,6 +158,18 @@ func TestTenPercentCalculation(t *testing.T){
 	got:=TenPercentCalculation(HousePrice)
 
 	want:=10
+
+	if got!=want{
+		t.Error("Got",got,"Want",want,)
+	}
+}
+
+func TestTwelvePercentCalculation(t *testing.T){
+	HousePrice:=100
+
+	got:=TwelvePercentCalculation(HousePrice)
+
+	want:=12
 
 	if got!=want{
 		t.Error("Got",got,"Want",want,)

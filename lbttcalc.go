@@ -23,6 +23,13 @@ func TenPercentCalculation(taxableAmount int)int{
 	return int((taxAmmountFloat/100)*10)
 }
 
+func TwelvePercentCalculation(taxableAmount int)int{
+	taxAmmountFloat:=float64(taxableAmount)
+
+	return int((taxAmmountFloat/100)*12)
+}
+
+
 
 func calculateLBTT(HousePrice int) (int , error) {
 	if HousePrice<0{
@@ -38,7 +45,7 @@ func calculateLBTT(HousePrice int) (int , error) {
 	case HousePrice <= 750000:
 		return TwoPercentCalculation(250000 - 145000) + FivePercentCalculation(325000 - 250000) + TenPercentCalculation(HousePrice-325000),nil
 	default:
-		return TwoPercentCalculation(250000 - 145000) + FivePercentCalculation(325000 - 250000) + TenPercentCalculation(HousePrice-325000),nil
+		return TwoPercentCalculation(250000 - 145000) + FivePercentCalculation(325000 - 250000) + TenPercentCalculation(750000-325000)+ TwelvePercentCalculation(HousePrice-750000),nil
 	}
 }
 
