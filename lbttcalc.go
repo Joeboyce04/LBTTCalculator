@@ -6,21 +6,21 @@ import (
 )
 
 func TwoPercentCalculation(taxableAmount int)int {
-	lbtt:=float64(taxableAmount)
+	taxAmmountFloat:=float64(taxableAmount)
 
-	return int((lbtt/100)*2)
+	return int((taxAmmountFloat/100)*2)
 }
 
 func FivePercentCalculation(taxableAmount int)int{
-	lbtt:=float64(taxableAmount)
+	taxAmmountFloat:=float64(taxableAmount)
 
-	return int((lbtt/100)*5)
+	return int((taxAmmountFloat/100)*5)
 }
 
 func TenPercentCalculation(taxableAmount int)int{
-	lbtt:=float64(taxableAmount)
+	taxAmmountFloat:=float64(taxableAmount)
 
-	return int((lbtt/100)*10)
+	return int((taxAmmountFloat/100)*10)
 }
 
 
